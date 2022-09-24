@@ -1,0 +1,4 @@
+# This is the config file for Nojus Net CORE Plugin
+
+#The port for anarchy server
+anarchyport: 25566

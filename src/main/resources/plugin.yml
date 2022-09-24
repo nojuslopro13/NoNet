@@ -1,0 +1,22 @@
+name: Nojusnetcoretwo
+version: '${project.version}'
+main: me.nojuslopro.nojusnetcoretwo.Nojusnetcoretwo
+api-version: 1.19
+commands:
+  unloadpack:
+    description: Unloads the server resource pack
+  loadpack:
+    description: Loads the server resource pack
+  freeze:
+    description: x
+  lobby:
+    description: Sends player to the lobby
+    aliases: hub
+  servers:
+    aliases: servermenu
+    description: Opens server menu
+  pagalba:
+    description: Opens book gui
+  fling:
+    description: Flings the selected target
+depend: [PlaceholderAPI]
