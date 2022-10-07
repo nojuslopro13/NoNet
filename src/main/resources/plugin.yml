@@ -19,4 +19,6 @@ commands:
     description: Opens book gui
   fling:
     description: Flings the selected target
-depend: [PlaceholderAPI]
+  position:
+    description: Position
+depend: [PlaceholderAPI, ProtocolLib]

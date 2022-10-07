@@ -12,15 +12,19 @@ import org.bukkit.inventory.Inventory;
 public class onPlayerInteractListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
-        if (event.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.COMPASS)) {
-            Inventory gui = ServerGUI.createGui(event.getPlayer());
-            event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_BARREL_OPEN, 1, 1);
-            event.getPlayer().openInventory(gui);
+        try {
+            if (event.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.COMPASS)) {
+                Inventory gui = ServerGUI.createGui(event.getPlayer());
+                event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_BARREL_OPEN, 1, 1);
+                event.getPlayer().openInventory(gui);
 
-        }
+            }
 
-        if (event.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.BOOK)) {
-            HelpGUI.createBookGui(event.getPlayer());
+            if (event.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.BOOK)) {
+                HelpGUI.createBookGui(event.getPlayer());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

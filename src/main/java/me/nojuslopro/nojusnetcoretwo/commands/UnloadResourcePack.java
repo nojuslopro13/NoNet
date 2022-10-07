@@ -13,8 +13,11 @@ public class UnloadResourcePack implements CommandExecutor {
 
         if (sender instanceof Player) {
             Player player = (Player) sender;
-
-
+            try {
+                player.setResourcePack(null);
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            }
         } else {
             Bukkit.getLogger().warning("You must be a player to execute this command!");
         }
